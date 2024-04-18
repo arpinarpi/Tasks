@@ -1,3 +1,18 @@
+ **Table of content:**
+ 
+- [Installation ](#Installation)
+- [Log and text editors](#Logandtexteditors)
+- [Setting up materials](#Settingupmaterials)
+- [Object Properties](#ObjectProperties)
+- [Export](#Export)
+- [Collection Properties](#CollectionProperties)
+- [Smoothing groups](#Smoothinggroups)
+- [Import](#Import)
+- [Tools](#Tools)
+- [Experimental Features](#ExperimentalFeatures)
+
+
+
 # Installation
 Installing this addon in `Blender` follows the standard procedure.
 
@@ -14,7 +29,7 @@ Menu for the presets won't be displayed until the existing directory path is spe
 
 For employees, it's worth to specify the path to dagorShaders.cfg in the folder with plugins for 3D Max, where it's frequently updated. For outsourcers, there's no need to change the default path, which points to the file in the addon's root folder.
 
-For each project taken to work on, the path to the **\assets\** folder should be specified. Provide a clear name, then click **"ADD Project"** to include it in the available list.
+For each project taken to work on, the path to the **assets** folder should be specified. Provide a clear name, then click **"ADD Project"** to include it in the available list.
 
 > [!NOTE]
 > Many UI elements have a tooltip on hover.
@@ -57,14 +72,14 @@ The import/export functions (and future functions) record execution details text
 For editing object properties(dagormats) of proximates as text, a special text object is also generated - its name is specified in the tooltip.
 
 # Setting up materials
-To set up the material for dagor, utilize a dedicated dagormat tab.
+To set up the material for dagor, utilize a dedicated **dagormat** tab.
 
 <img width="239" alt="6" src="https://github.com/arpinarpi/Tasks/assets/167418790/6813c66e-1d65-43c5-853f-43feea7579d0">
 
 
 This tab contains multiple sections that can be minimized when not in use.
 
-# Main
+## Main
 
 <img width="490" alt="7" src="https://github.com/arpinarpi/Tasks/assets/167418790/2c87b5b5-10a8-4f21-a906-8c3094ef2567">
 
@@ -77,22 +92,25 @@ Below, there's a list of "legacy" properties: ambient, specular, diffuse, emissi
 <img width="467" alt="8" src="https://github.com/arpinarpi/Tasks/assets/167418790/3c766a46-b71f-4b0c-9f68-27d9089ec8b9">
 
 Additionally, this tab allows you to choose a shader from the available options or input a value manually if new shaders have been added to the game but not yet updated in the tools.
-The list of shaders and their possible parameters is sourced from **dagorShaders.cfg**, which is typically located at:
-**C:\Users<username>\AppData\Roaming\Blender Foundation\Blender<version number>\scripts\addons\dag4blend\**
 
-# Textures
+The list of shaders and their possible parameters is sourced from **dagorShaders.cfg**, which is typically located at:
+
+`C:\Users<username>\AppData\Roaming\Blender Foundation\Blender<version number>\scripts\addons\dag4blend\`
+
+## Textures
 
 <img width="173" alt="9" src="https://github.com/arpinarpi/Tasks/assets/167418790/8e5a749f-9f1d-444a-a2df-679df0b6a923">
 
 It's straightforward here. This section presents a list of textures being used. Indexes, identical to those stored in dag files, are available in tooltips. You can easily copy and paste paths from AV or Explorer: the quotes will be automatically removed.
-# Optional
+
+## Optional
 
 <img width="232" alt="10" src="https://github.com/arpinarpi/Tasks/assets/167418790/e70ba64b-cbf6-4ac3-8c02-904354badfe7">
 
 
 Visual editing of shader parameters. You can enter it manually or select from a list, similar to how it works with shader selection.
 
-# Tools
+## Tools
 
 <img width="484" alt="11" src="https://github.com/arpinarpi/Tasks/assets/167418790/0650c8e6-dc8a-408e-99a5-f3306c728d97">
 
@@ -102,17 +120,15 @@ The search function operates in two modes: exclusively for the active material o
 For the search function to work correctly, ensure the project is specified accurately. For instance, when working on an asset for Enlisted, specify "Enlisted."
 
 With a single button press, you can locate all textures and proxies (if available in this project). Note that texture search only affects display in the viewport and does not modify the material's path.
-The "Rebuild" option reconstructs the material(s) for the viewport, as implied by its name.
-After conducting a texture search, it's recommended to use "Update texture paths" to locate and replace non-existent paths with actual ones.
+The **"Rebuild"** option reconstructs the material(s) for the viewport, as implied by its name.
+After conducting a texture search, it's recommended to use **"Update texture paths"** to locate and replace non-existent paths with actual ones.
 
-"Clear texture paths" simply removes the directory information, retaining only the texture names.
+**"Clear texture paths"** simply removes the directory information, retaining only the texture names.
 
-# Proxy
-
+## Proxy
+As is clear from the above, the addon now includes support for proxymats.
 
 <img width="236" alt="12" src="https://github.com/arpinarpi/Tasks/assets/167418790/00796b96-98e5-43f6-a396-f053f96a2d52">
-
-As is clear from the above, the addon now includes support for proxymats.
 
 Information regarding proxymats parameters is extracted from the blk file, hence all settings for them remain hidden. Instead, a new tab is being added enabling users to specify the path to the folder containing the proxymats. This path can still be modified either as text or temporarily by unchecking the "is proxymat" checkbox.
 
@@ -128,19 +144,19 @@ Located in the N-panel, in the Dagor tab. Shows the parameters of the active obj
 
 
 ## Properties
-Visual editing enables you to add, remove, and adjust parameters individually. The UI format is determined by the value string. If an incorrect UI option is displayed (for instance, prop:r=0 generated an integer switch, the variable requires a fractional part for further configuration), enter the name of the existing parameter and the value in the correct format (e.g., 0.0 instead of 0 for a float slider) in the name field. Specifying the type in the name separated by a colon is essential.
+Visual editing enables you to add, remove, and adjust parameters individually. The UI format is determined by the **value** string. If an incorrect UI option is displayed (for instance, prop:r=0 generated an integer switch, the variable requires a fractional part for further configuration), enter the **name** of the existing parameter and the value in the correct format (e.g., **0.0** instead of **0** for a float slider) in the name field. Specifying the type in the name separated by a colon is essential.
 
 ## Presets
 Once properties are configured, you can save them as presets and easily apply them to other objects with a few clicks. To save the properties of the active object, specify the name of the future preset and click "Save preset as:". To apply an existing preset, select it from the dropdown and click "Apply preset:". Presets are simple text files, editable in a text editor, so feel free to edit them whenever you need it. Clicking the "open presets folder" button reveals a folder containing all presets in .txt format, where you can add, delete, or edit them. Changes are applied instantly.
 
 ## Tools
-Editing as text within Blender, similar to editing materials, involves opening a text editor on the file by clicking "Open as text". "Apply..." applies changes from the text, while "Write example" inserts an example into the text (without applying it, as it may require customization for a specific situation). "Transfer Attr" copies a list of properties from the active object and assigns them to all selected ones, saving time compared to manual copying. Since version was 2.1.0 released, the text object "props_temp" opens automatically if the internal text editor is open.
+Editing as text within Blender, similar to editing materials, involves opening a text editor on the file by clicking **"Open as text"**. **"Apply..."** applies changes from the text, while **"Write example"** inserts an example into the text (without applying it, as it may require customization for a specific situation). **"Transfer Attr"** copies a list of properties from the active object and assigns them to all selected ones, saving time compared to manual copying. Since version was 2.1.0 released, the text object "props_temp" opens automatically if the internal text editor is open.
 
 > [!Warning]
 > Incorrect values in Object Properties are listed in a separate field labeled "broken properties," separated by ";". This enables manual restoration if needed. Similarly, incorrect values are recorded when utilizing "Apply from text".
 
 # Export
-Similar to other import-export addons, the DAG exporter can be accessed through File/Export/. However, for efficiency during multiple re-exports while working, the exporter is also available in the N-menu (is recommended to use). Both options offer identical functionality, so choose the one that suits you best.
+Similar to other import-export addons, the DAG exporter can be accessed through `File/Export/`. However, for efficiency during multiple re-exports while working, the exporter is also available in the N-menu (is recommended to use). Both options offer identical functionality, so choose the one that suits you best.
 
 ## Batch Export
 Common parameters:
@@ -160,22 +176,16 @@ Common parameters:
 
 The **Name** field is context-sensitive and appears only when exporting to a single .dag file; in other export modes, it's hidden.
 The **Collection** field is also context-sensitive. You are not forced to select a collection from the dropdown by clicking on this field; instead you can simply drag and drop the desired one from the outliner.
-Limit by allows you to choose the export mode.
+**Limit by** allows you to choose the export mode.
 
-
-
-
-
-
-table 
 
 | Mode                   | What will it export? | Input data example | Result Example|
 | :---                   |     :---             |        :---:  |:---          |
-| Visible                | export all scene contents to Path\ <Name>.dag | <img width="500" alt="14" src="https://github.com/arpinarpi/Tasks/assets/167418790/aa449616-ee6a-4b5f-9b1e-1abf7c746419">  |C:\tmp\asset.dag, Containing all scene objects with custom normals. |
+| Visible                | export all scene contents to Path\ <Name>.dag | <img width="160" alt="14" src="https://github.com/arpinarpi/Tasks/assets/167418790/aa449616-ee6a-4b5f-9b1e-1abf7c746419">  |C:\tmp\asset.dag, Containing all scene objects with custom normals. |
 | Sel. Joined            | exporting selected objects to Path\<Name>.dag | <img width="162" alt="15" src="https://github.com/arpinarpi/Tasks/assets/167418790/246241e0-ed2c-4bec-bad4-26d35a1e6711"> |C:\tmp\asset.dag, Containing only the selected scene objects. |
 | Sel. Separated         | exporting selected objects to different .dag files. The names of these objects are used as the dag name.            | <img width="294" alt="16" src="https://github.com/arpinarpi/Tasks/assets/167418790/4b5ab762-6d46-434f-846c-2f38649e50b1">|C:\tmp\cube.lod00.dag, C:\tmp\cube.lod01.dag.  |
 | Col. Separated         | Saves collections from the hierarchy starting with the selected one, if there are no nested subcollections inside. The 'export Orphans' checkbox allows you to export objects located next to the collections. It will be clearer with an example ->  | <img width="395" alt="17" src="https://github.com/arpinarpi/Tasks/assets/167418790/30338f9a-8c3d-4bad-adb5-93aad253524d">|In the same path (C:\tmp\) cube.lod00.dag will be saved, with visible geometry and occluder inside cube.lod01.dag, with visible geometry and collider inside cube.lod02.dagcube_temp.dag, it will not be exported as the exportOrphans checkbox is not active. If you do not specify the collection at all, then in this case the result will be identical, because the check will start with the SceneCollection, and it contains only the same cube collection    |
-| Col. Joined            | Saves the entire contents of the selected collection to a file, named like this collection. Created primarily for viewing asset files created from several files in AV. For example, houses with _dp             |    <img width="396" alt="18" src="https://github.com/arpinarpi/Tasks/assets/167418790/2dd04ade-eafb-4e64-90c3-242fb78d1618">   |C:\tmp\soviet_town_building_5_floors_a_joined.lod00.dag, containing all zero lods related to this building. The collections were linked (transferred in the outliner with Ctrl), i.e. these are not copies, but the same collections. You can prepare the rest of the temporary lodes in the same way. Much faster than selecting objects and entering a name manually. **Please pay attention:** since these are the same collections, and not copies, do not delete them on DEL, but put them away on RMB/Unlink, so as not to overwrite the excess    |
+| Col. Joined            | Saves the entire contents of the selected collection to a file, named like this collection. Created primarily for viewing asset files created from several files in AV. For example, houses with _dp             |    <img width="396" alt="18" src="https://github.com/arpinarpi/Tasks/assets/167418790/2dd04ade-eafb-4e64-90c3-242fb78d1618">   |C:\tmp\soviet_town_building_5_floors_a_joined.lod00.dag, containing all zero lods related to this building.  The collections were linked (transferred in the outliner with Ctrl), i.e. these are not copies, but the same collections. You can prepare the rest of the temporary lodes in the same way. Much faster than selecting objects and entering a name manually.**Please pay attention:** since these are the same collections, and not copies, do not delete them on DEL, but put them away on RMB/Unlink, so as not to overwrite the excess    |
 
 
 # Collection Properties
@@ -196,13 +206,13 @@ A more useful technique involves specifying a subpath if you need to save severa
 
 <img width="334" alt="21" src="https://github.com/arpinarpi/Tasks/assets/167418790/a92f23d6-924c-4a1c-a978-c2d3abf2fa41">
 
-For instance, in this example, the export will occur to **"C:\tmp\subfolder\yet_another_subfolder\cube.lod00.dag"** - a handy approach when dealing with complex assets. For example, with buildings - windows in **"composit_parts\windows*", doors in "composit_parts\doors*"**, etc.
+For instance, in this example, the export will occur to **"C:\tmp\subfolder\yet_another_subfolder\cube.lod00.dag"** - a handy approach when dealing with complex assets. For example, with buildings - windows in **"composit_parts\windows\*"**, doors in **"composit_parts\doors\*"**, etc.
 
 But there's more. If desired, you can completely redefine the path by starting it with an appropriate disk letter:
 
 <img width="236" alt="22" src="https://github.com/arpinarpi/Tasks/assets/167418790/76bbbfe2-f96f-4f6c-9e90-e005f8e5a2d8">
 
-Here the "Path" field will be ignored for this collection, and the file will instead be exported to "D:\EnlistedCDK\develop\assets\rendinst_1lod".
+Here the **"Path"** field will be ignored for this collection, and the file will instead be exported to **"D:\EnlistedCDK\develop\assets\rendinst_1lod"**.
 
 ## Type
 
@@ -221,13 +231,13 @@ Although "dynmodel" is included in the list, it's not actively used since dynmod
 <img width="390" alt="24" src="https://github.com/arpinarpi/Tasks/assets/167418790/8c48ae0a-fca3-4bd2-8a53-858ea95a1597">
 
 
-During the development phase, a bug was uncovered in blender's function for calculating smoothing groups when exporting to formats that utilize them. To address this issue, a smoothing group editor has been incorporated. It becomes accessible in Edit Mode when the selection mode is set to Faces.
+During the development phase, a bug was uncovered in blender's function for calculating smoothing groups when exporting to formats that utilize them. To address this issue, a smoothing group editor has been incorporated. It becomes accessible in Edit Mode when the selection mode is set to **Faces**.
 
-Upon import, objects retain their smoothing groups from the source file. However, newly created groups lack smoothing, so you must first generate them using the Init button. When smoothing groups are present, the interface operates similarly to 3D Max, but without real-time display. A partial preview is offered under "Convert to Sharp Edges," but it only displays hard points from smoothing groups, not problematic points.
+Upon import, objects retain their smoothing groups from the source file. However, newly created groups lack smoothing, so you must first generate them using the **Init** button. When smoothing groups are present, the interface operates similarly to 3D Max, but without real-time display. A partial preview is offered under **"Convert to Sharp Edges,"** but it only displays hard points from smoothing groups, not problematic points.
 
 Starting from version 2.1.0, the "Live Update" function has been introduced. When activated, hard points are recalculated automatically when editing smoothing groups. However, this may significantly slow down on heavy geometry, so the option is disabled by default.
 
-In the same version, the feature to select polygons by smoothing group was introduced. Simply click on the button corresponding to the desired group in the "Select by SG" sub-panel.
+In the same version, the feature to select polygons by smoothing group was introduced. Simply click on the button corresponding to the desired group in the **"Select by SG"** sub-panel.
 
 > [!Note]
 > Selection by smoothing group supplements existing selections rather than replacing them. Therefore, if you only intend to select smoothing group 3, for instance, remember to unselect any other groups first.
@@ -246,7 +256,7 @@ By analogy with export, there are two methods - standard via File/import and bat
 
 ## Import and textures
 The .dag file not only stores the texture name but also its path. However, during file transfers, paths often become irrelevant. If the texture specified path doesn't exist or only the name is given in the file, it's replaced with UV-checker. If a texture is used in multiple materials, updating the path in one of them to the correct one will load the texture for the rest.
-Texture slots are utilized similar to rendinst_simple, regardless of the selected shader. However, the nodes are organized in a logical pattern rather than overlapping. Images from all slots are now added to the Shader Editor. When Node Wrangler is enabled, they can be viewed by pressing Shift+Ctrl+LMB.
+Texture slots are utilized similar to rendinst_simple, regardless of the selected shader. However, the nodes are organized in a logical pattern rather than overlapping. Images from all slots are now added to the Shader Editor. When Node Wrangler is enabled, they can be viewed by pressing `Shift+Ctrl+LMB`.
 
 ## File/Import
 
@@ -282,11 +292,11 @@ Enabling **"Search in subfolders"** extends the search beyond the specified dire
 
 **"Path"** indicates the search path.
 
-**"Preserve paths"** retains the full path to the dag (including the file name) in the Collection Property. This is useful for importing files from various folders, making modifications, and then batch exporting each to its designated location.
+**"Preserve paths"** retains the full path to the dag (including the file name) in the **Collection Property**. This is useful for importing files from various folders, making modifications, and then batch exporting each to its designated location.
 
 **"Preserve Smoothing Groups"** stores smoothing groups in an attribute to prevent changes during export. This isn't recommended if you plan to modify the imported geometry, as existing attributes will prevent automatic recalculation from hard edges.
 
-During import, Blender may become unresponsive. To monitor the process, I suggest opening the console (Window/Toggle system console).
+During import, Blender may become unresponsive. To monitor the process, I suggest opening the console **(Window/Toggle system console)**.
 
 # Additional features
 There are many cases when you may need to import a single asset currently open in the Asset Viewer or Windows Explorer. Instead of searching for it in File\Import, you can copy the path from AV or Windows Explorer (RMB/copy as path) and paste it into the Path panel of batch import. This automatically transfers the file name to Masks. Clicking on Import will then pull in only the desired asset.
@@ -338,7 +348,7 @@ collType:t=box
 
 This setup may still require adjustments such as moving and scaling the bboxes to fit the outline better, but it streamlines the setup process.
 
-# Experimental Features. 
+# Experimental Features
 ## Bake
 
 <img width="383" alt="30" src="https://github.com/arpinarpi/Tasks/assets/167418790/2b709c60-de83-47e9-9c7a-03225f6b0b48">
