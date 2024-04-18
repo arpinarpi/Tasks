@@ -1,9 +1,12 @@
 # Installation
-Installing this addon in Blender follows the standard procedure.
+Installing this addon in `Blender` follows the standard procedure.
 
 Go to **Edit/Preferences/Add-ons**, then click **Install** and fill in the addon **.zip** file path. Employees can find it at **D:\dagor2\tools\dagor3_cdk\pluginBlender**.
 
 After installation, tick the checkbox next to the addon in the list. Before starting work, do some initial setup without closing Preferences:
+
+![1](https://github.com/arpinarpi/Tasks/assets/167418790/8f20ae2a-0a93-4a76-911e-3f22a58c763d)
+
 
 Manually set the paths for ObjectProperties presets and shader lists to prevent user changes from being unsaved when installing a new addon version. It's recommended to store presets outside the addon folder.
 
@@ -18,15 +21,24 @@ For each project taken to work on, the path to the **\assets\** folder should be
 
 Starting from version dag4blend2.0, additional parameters are included for projects. You can access them in the Projects panel conveniently.
 
+![2](https://github.com/arpinarpi/Tasks/assets/167418790/2961c11e-c664-47a2-a71b-07eaa6e3338d)
+
+
 Now, after adding a project, you can edit the path directly. This allows for easy resource transfer for example to another disk without needing to delete and re-add the project with a new path.
 
 **Shading mode:** Projects may have slight differences in shader behavior categorized into two main groups - Enlisted-like and Warthunder-like shaders.
 
 **Palettes:** Default global and local palettes are available.
 
-The **"Experimental Features"** section includes new tools that are functional but may have some limitations.
+The "Experimental Features" section includes new tools that are functional but may have some limitations.
 
-**New additions** include a composite editor and texture baking tools.
+<img width="396" alt="3" src="https://github.com/arpinarpi/Tasks/assets/167418790/8d6331b8-8ce3-4e45-afa2-5a34d46f644e">
+
+
+New additions include a composite editor and texture baking tools.
+
+<img width="359" alt="4" src="https://github.com/arpinarpi/Tasks/assets/167418790/e054a23e-fd3f-42fb-95e2-7f586f998526">
+
 
 You can set the active project and change palettes through the menu in the scene properties, eliminating the need to access User Preferences repeatedly.
 
@@ -37,29 +49,53 @@ Initially, the global and local palettes will consist of simple red and green fi
 # Log and text editors
 In this toolkit, text objects are vital, so it is recommended including a text field in the layout, or creating a new window solely for a text field, especially if you're using multiple monitors.
 
+
+<img width="388" alt="5" src="https://github.com/arpinarpi/Tasks/assets/167418790/68a70044-64bd-4146-a8d3-18480ae4edaf">
+
 The import/export functions (and future functions) record execution details text in the "log". Remember, it doesn't clear automatically, so periodically clear it yourself, ensuring there are no unchecked errors or warnings. To clear it, simply "delete" the text object; the tools will generate a new one when needed. This method might be quicker than selecting and deleting each line individually with backspace/Delete.
 
 For editing object properties(dagormats) of proximates as text, a special text object is also generated - its name is specified in the tooltip.
 
 # Setting up materials
-To set up the material for dagor, utilize a dedicated dagormat tab. This tab contains multiple sections that can be minimized when not in use.
+To set up the material for dagor, utilize a dedicated dagormat tab.
+
+<img width="239" alt="6" src="https://github.com/arpinarpi/Tasks/assets/167418790/6813c66e-1d65-43c5-853f-43feea7579d0">
+
+
+This tab contains multiple sections that can be minimized when not in use.
 
 # Main
+
+<img width="490" alt="7" src="https://github.com/arpinarpi/Tasks/assets/167418790/2c87b5b5-10a8-4f21-a906-8c3094ef2567">
+
 In this section, you can specify whether the material is double-sided and, if so, what type.
 **two_sided:** Each triangle is rendered on both sides, resulting in a slightly heavier shader but lighter geometry. This setting is primarily used for dense geometry like tree crowns.
 **single_sided:** This option creates a one-sided material where the reverse side is ignored.
 **real_two_sided:** Technically still one-sided, but in the engine, each triangle with this material is duplicated and inverted to be visible from the opposite side. While the shader is lighter, it doubles the mesh's weight, so it's preferable for simpler meshes.
 Below, there's a list of "legacy" properties: ambient, specular, diffuse, emissive, and power. Hovering over each property provides a tooltip explaining its function.
+
+<img width="467" alt="8" src="https://github.com/arpinarpi/Tasks/assets/167418790/3c766a46-b71f-4b0c-9f68-27d9089ec8b9">
+
 Additionally, this tab allows you to choose a shader from the available options or input a value manually if new shaders have been added to the game but not yet updated in the tools.
 The list of shaders and their possible parameters is sourced from **dagorShaders.cfg**, which is typically located at:
 **C:\Users<username>\AppData\Roaming\Blender Foundation\Blender<version number>\scripts\addons\dag4blend\**
 
 # Textures
+
+<img width="173" alt="9" src="https://github.com/arpinarpi/Tasks/assets/167418790/8e5a749f-9f1d-444a-a2df-679df0b6a923">
+
 It's straightforward here. This section presents a list of textures being used. Indexes, identical to those stored in dag files, are available in tooltips. You can easily copy and paste paths from AV or Explorer: the quotes will be automatically removed.
 # Optional
+
+<img width="232" alt="10" src="https://github.com/arpinarpi/Tasks/assets/167418790/e70ba64b-cbf6-4ac3-8c02-904354badfe7">
+
+
 Visual editing of shader parameters. You can enter it manually or select from a list, similar to how it works with shader selection.
 
 # Tools
+
+<img width="484" alt="11" src="https://github.com/arpinarpi/Tasks/assets/167418790/0650c8e6-dc8a-408e-99a5-f3306c728d97">
+
 
 In this section, you can modify the active material in text format. If there's no text editing area, it will be added to the left of the viewport; otherwise, it'll open in the first available text zone.
 The search function operates in two modes: exclusively for the active material or for all materials in the scene. You can switch between modes by clicking on the text and indicating the current mode.
@@ -70,7 +106,12 @@ The "Rebuild" option reconstructs the material(s) for the viewport, as implied b
 After conducting a texture search, it's recommended to use "Update texture paths" to locate and replace non-existent paths with actual ones.
 
 "Clear texture paths" simply removes the directory information, retaining only the texture names.
+
 # Proxy
+
+
+<img width="236" alt="12" src="https://github.com/arpinarpi/Tasks/assets/167418790/00796b96-98e5-43f6-a396-f053f96a2d52">
+
 As is clear from the above, the addon now includes support for proxymats.
 
 Information regarding proxymats parameters is extracted from the blk file, hence all settings for them remain hidden. Instead, a new tab is being added enabling users to specify the path to the folder containing the proxymats. This path can still be modified either as text or temporarily by unchecking the "is proxymat" checkbox.
@@ -82,6 +123,9 @@ Any modifications made can be reverted by reloading the information from the fil
 
 # Object Properties
 Located in the N-panel, in the Dagor tab. Shows the parameters of the active object, so when there are no active objects - it is hidden.
+
+<img width="182" alt="13" src="https://github.com/arpinarpi/Tasks/assets/167418790/0a4e5e35-ac2e-433e-98b2-0257a6270741">
+
 
 ## Properties
 Visual editing enables you to add, remove, and adjust parameters individually. The UI format is determined by the value string. If an incorrect UI option is displayed (for instance, prop:r=0 generated an integer switch, the variable requires a fractional part for further configuration), enter the name of the existing parameter and the value in the correct format (e.g., 0.0 instead of 0 for a float slider) in the name field. Specifying the type in the name separated by a colon is essential.
@@ -133,18 +177,34 @@ table
 
 # Collection Properties
 
+
+<img width="161" alt="19" src="https://github.com/arpinarpi/Tasks/assets/167418790/09b7ef95-b6ae-4541-a4f2-bda9f5804be6">
+
 Just like object properties, it is located in the N-panel. Shows properties of the active collection. Unlike object properties, these properties only exist within Blender and are used for internal purposes.
 
 ## Override name
 This feature allows you to change the name under which the collection will be exported in **"Col.Separated"** mode. By default, this override is disabled.
 When importing .dag files with names longer than 63 characters (blender's limit), the name will be stored in this field to prevent loss of "unfit" characters. However, you can manually reassign it by checking the box and entering a new name:
+
+<img width="311" alt="20" src="https://github.com/arpinarpi/Tasks/assets/167418790/afe6d2e4-f477-45e0-8921-6ea71741d242">
+
 In the example provided, the contents of the collection will be exported to **"C:\tmp\cube.lod00.dag"** instead of **"C:\tmp\Collection.dag"**. However, this isn't the most practical use.
 A more useful technique involves specifying a subpath if you need to save several files in different subfolders. This subpath will be appended after the main export path. If you don't need to replace the collection name, simply end the sub-path with the **"*"** symbol. During export, this symbol will be replaced with the collection name:
+
+<img width="334" alt="21" src="https://github.com/arpinarpi/Tasks/assets/167418790/a92f23d6-924c-4a1c-a978-c2d3abf2fa41">
+
 For instance, in this example, the export will occur to **"C:\tmp\subfolder\yet_another_subfolder\cube.lod00.dag"** - a handy approach when dealing with complex assets. For example, with buildings - windows in **"composit_parts\windows*", doors in "composit_parts\doors*"**, etc.
+
 But there's more. If desired, you can completely redefine the path by starting it with an appropriate disk letter:
+
+<img width="236" alt="22" src="https://github.com/arpinarpi/Tasks/assets/167418790/76bbbfe2-f96f-4f6c-9e90-e005f8e5a2d8">
+
 Here the "Path" field will be ignored for this collection, and the file will instead be exported to "D:\EnlistedCDK\develop\assets\rendinst_1lod".
 
 ## Type
+
+<img width="182" alt="23" src="https://github.com/arpinarpi/Tasks/assets/167418790/cf5e08f5-2afc-4fa0-b0a9-74b418b0839d">
+
 Utilized by the compositing editor, this field records the type of node during import and is crucial for exact determining the type during export. This helps prevent confusion, particularly with assets that share similar names between compositing and rendering. When creating a composite manually, ensure to specify this field if you plan to export to a composite book.
 
 Although "dynmodel" is included in the list, it's not actively used since dynmodels cannot be organized through composites. The composite importer assumes that all assets with ".lod**.dag" in the name are rendinsts, not dynmodels, for the same reason.
@@ -154,6 +214,10 @@ Although "dynmodel" is included in the list, it's not actively used since dynmod
 > Geometry Nodes cannot currently be used in conjunction with custom normals due to the fact that applying a modifier erases them. When arranging instances of objects using geometry nodes, remember to include the "Realize instances" node. Without this node, the geometry will be lost during export. Technically, up to this node, these instances are similar to "dummy" objects in composite nodes, as they do not have their own geometry.
 
 # Smoothing groups
+
+<img width="390" alt="24" src="https://github.com/arpinarpi/Tasks/assets/167418790/8c48ae0a-fca3-4bd2-8a53-858ea95a1597">
+
+
 During the development phase, a bug was uncovered in blender's function for calculating smoothing groups when exporting to formats that utilize them. To address this issue, a smoothing group editor has been incorporated. It becomes accessible in Edit Mode when the selection mode is set to Faces.
 
 Upon import, objects retain their smoothing groups from the source file. However, newly created groups lack smoothing, so you must first generate them using the Init button. When smoothing groups are present, the interface operates similarly to 3D Max, but without real-time display. A partial preview is offered under "Convert to Sharp Edges," but it only displays hard points from smoothing groups, not problematic points.
@@ -166,7 +230,11 @@ In the same version, the feature to select polygons by smoothing group was intro
 > Selection by smoothing group supplements existing selections rather than replacing them. Therefore, if you only intend to select smoothing group 3, for instance, remember to unselect any other groups first.
 
 # When to use?
+
 If there's an area on the model where hard points don't completely separate the surface into enclosed zones, the calculation of smoothing groups may be incorrect and require manual correction. Additionally, smoothing groups may need adjustment after modifying existing dags following import if the groups were saved to an attribute.
+
+<img width="194" alt="25" src="https://github.com/arpinarpi/Tasks/assets/167418790/f9959b93-662a-4b95-895f-fa29b662381e">
+
 
 The example above illustrates an incorrect calculation. On the right side, there's a single group encompassing everything - the hard edges in the middle will be lost, resulting in shading blurring. Smoothing groups are assigned to each zone delimited by hard edges. However, the specified hard edges will be lost because they don't extend to the opposite side and fail to divide into two separate "islands."
 
@@ -178,6 +246,10 @@ The .dag file not only stores the texture name but also its path. However, durin
 Texture slots are utilized similar to rendinst_simple, regardless of the selected shader. However, the nodes are organized in a logical pattern rather than overlapping. Images from all slots are now added to the Shader Editor. When Node Wrangler is enabled, they can be viewed by pressing Shift+Ctrl+LMB.
 
 ## File/Import
+
+<img width="128" alt="26" src="https://github.com/arpinarpi/Tasks/assets/167418790/4e4a39b2-cfc4-4c0f-9cf1-4b7288fbe589">
+
+
 File/Import Options:
 **Optimize material slots:** Removes unused slots and merges slots with the same material.
 **Import LODs:** Allows importing all LODs, not just the selected dag.
@@ -188,6 +260,10 @@ File/Import Options:
 If you need to import much more dags at a time, batch import becomes handy.
 
 ## Batch Import
+
+<img width="210" alt="27" src="https://github.com/arpinarpi/Tasks/assets/167418790/a57f4254-4aa4-43cf-9fca-88a2b10cea6b">
+
+
 This panel facilitates importing data from a designated folder.
 
 Enabling **"Search in subfolders"** extends the search beyond the specified directory to include all its subfolders for suitable files. Be careful, as Blender may become overwhelmed without proper masks or with big number of matches, attempting to import everything simultaneously.
@@ -212,9 +288,16 @@ During import, Blender may become unresponsive. To monitor the process, I sugges
 # Additional features
 There are many cases when you may need to import a single asset currently open in the Asset Viewer or Windows Explorer. Instead of searching for it in File\Import, you can copy the path from AV or Windows Explorer (RMB/copy as path) and paste it into the Path panel of batch import. This automatically transfers the file name to Masks. Clicking on Import will then pull in only the desired asset.
 
-If you only have the asset's name, you can specify it in Masks, then apply the entire project directory as a search path with subfolders using the "Apply as search path" button. When the path is unknown, the import may take a couple of seconds longer (search time), but it's often quicker than manually finding the full path.
+If you only have the asset's name, you can specify it in Masks, then apply the entire project directory as a search path with subfolders using the **"Apply as search path"** button. When the path is unknown, the import may take a couple of seconds longer (search time), but it's often quicker than manually finding the full path.
+
+<img width="280" alt="28" src="https://github.com/arpinarpi/Tasks/assets/167418790/eca287dc-a7f3-4ee7-b8d7-3df23a3614fb">
+
 
 # Tools
+
+<img width="184" alt="29" src="https://github.com/arpinarpi/Tasks/assets/167418790/2c0f3069-d5fc-4229-ad70-caf2997ceaf8">
+
+
 The panel continues to undergo enhancements. Tools are organized into blocks to prevent overloading the interface when not in use.
 
 **"Optimize material slots"** consolidates slots with identical materials and eliminates unused ones.
@@ -255,11 +338,18 @@ This setup may still require adjustments such as moving and scaling the bboxes t
 # Experimental Features. 
 ## Bake
 
+<img width="383" alt="30" src="https://github.com/arpinarpi/Tasks/assets/167418790/2b709c60-de83-47e9-9c7a-03225f6b0b48">
+
+
 This panel makes it possible to re-bake textures from heavy shaders to rendinst_simple. Typically used for final builds or porting assets to mobile projects.
 
 The topic is extensive, so it is discussed in a separate article.
 
 ## Composite editor.
+
+
+<img width="185" alt="31" src="https://github.com/arpinarpi/Tasks/assets/167418790/ea7d5b13-22dc-4607-b7a2-76a1fe0555dc">
+
 
 The name speaks for itself. Also discussed in a separate article.
 
