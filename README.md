@@ -92,7 +92,7 @@ Once properties are configured, you can save them as presets and easily apply th
 ## Tools
 Editing as text within Blender, similar to editing materials, involves opening a text editor on the file by clicking "Open as text". "Apply..." applies changes from the text, while "Write example" inserts an example into the text (without applying it, as it may require customization for a specific situation). "Transfer Attr" copies a list of properties from the active object and assigns them to all selected ones, saving time compared to manual copying. Since version was 2.1.0 released, the text object "props_temp" opens automatically if the internal text editor is open.
 
-> [Warning!]
+> [!Warning]
 > Incorrect values in Object Properties are listed in a separate field labeled "broken properties," separated by ";". This enables manual restoration if needed. Similarly, incorrect values are recorded when utilizing "Apply from text".
 
 # Export
@@ -150,7 +150,7 @@ Utilized by the compositing editor, this field records the type of node during i
 Although "dynmodel" is included in the list, it's not actively used since dynmodels cannot be organized through composites. The composite importer assumes that all assets with ".lod**.dag" in the name are rendinsts, not dynmodels, for the same reason.
 
 ## Geometry Nodes
-> [Important!]
+> [!Important]
 > Geometry Nodes cannot currently be used in conjunction with custom normals due to the fact that applying a modifier erases them. When arranging instances of objects using geometry nodes, remember to include the "Realize instances" node. Without this node, the geometry will be lost during export. Technically, up to this node, these instances are similar to "dummy" objects in composite nodes, as they do not have their own geometry.
 
 # Smoothing groups
@@ -162,7 +162,7 @@ Starting from version 2.1.0, the "Live Update" function has been introduced. Whe
 
 In the same version, the feature to select polygons by smoothing group was introduced. Simply click on the button corresponding to the desired group in the "Select by SG" sub-panel.
 
-> [Note!]
+> [!Note]
 > Selection by smoothing group supplements existing selections rather than replacing them. Therefore, if you only intend to select smoothing group 3, for instance, remember to unselect any other groups first.
 
 # When to use?
@@ -198,7 +198,7 @@ Enabling **"Search in subfolders"** extends the search beyond the specified dire
 
 **"Excludes"** follows the same syntax, but for excluding items from imports.
 
-> [Tip!]
+> [!Tip]
 > For instance, Masks="asset_a.lod0[0,2]; asset_b_dp"; Excludes="_dmg" imports asset_a.lod00.dag, asset_a.lod02.dag, and all logs of all dp asset_b, excluding their _dmg versions.
 
 **"Path"** indicates the search path.
