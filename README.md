@@ -24,7 +24,7 @@
 - [Tools](#Tools)
 - [Experimental Features](#ExperimentalFeatures)
    - [Bake](#Bake)
-     - [Bake](#Bake)
+     - [The topic is extensive, so it is discussed in a separate article](#Thetopicisextensive,soitisdiscussedinaseparatearticle)
    - [Composite editor](#Compositeeditor)
    - [General limitations of blender tools](#Generallimitationsofblendertools)
 
