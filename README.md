@@ -51,8 +51,12 @@ For employees, it's worth to specify the path to dagorShaders.cfg in the folder 
 
 For each project taken to work on, the path to the **assets** folder should be specified. Provide a clear name, then click **"ADD Project"** to include it in the available list.
 
+________________________________________________________________________________________
+
 > [!NOTE]
 > Many UI elements have a tooltip on hover.
+________________________________________________________________________________________
+
 
 Starting from version dag4blend2.0, additional parameters are included for projects. You can access them in the Projects panel conveniently.
 
@@ -77,9 +81,13 @@ New additions include a composite editor and texture baking tools.
 
 You can set the active project and change palettes through the menu in the scene properties, eliminating the need to access User Preferences repeatedly.
 
+________________________________________________________________________________________
+
 > [!IMPORTANT]
 > The addon implements the settings when these parameters are changed, but currently only if they exist. Therefore, to correct the shader mode, you must reselect the project after creating at least one dagormat in the scene. Similarly, for palettes, you need to reselect the project after creating a dagormat with painting.
 Initially, the global and local palettes will consist of simple red and green fills, and shaders will be in WT mode. To adjust this, simply reselect the project from the dropdown after the first import or asset creation.
+________________________________________________________________________________________
+
 
 # Log and text editors
 In this toolkit, text objects are vital, so it is recommended including a text field in the layout, or creating a new window solely for a text field, especially if you're using multiple monitors.
@@ -154,8 +162,12 @@ Information regarding proxymats parameters is extracted from the blk file, hence
 
 Any modifications made can be reverted by reloading the information from the file or, conversely, saved to the proxymat. Moreover, converting any regular material into a proxy is simple—just toggle the checkbox and save it to the preferred folder.
 
+________________________________________________________________________________________
+
 > [!IMPORTANT]
 > In Blender, proxymats utilize the filename rather than the user-specified one. During import, the shader is automatically renamed if the names differ.
+________________________________________________________________________________________
+
 
 # Object Properties
 Located in the N-panel, in the Dagor tab. Shows the parameters of the active object, so when there are no active objects - it is hidden.
@@ -171,9 +183,11 @@ Once properties are configured, you can save them as presets and easily apply th
 
 ## Tools
 Editing as text within Blender, similar to editing materials, involves opening a text editor on the file by clicking **"Open as text"**. **"Apply..."** applies changes from the text, while **"Write example"** inserts an example into the text (without applying it, as it may require customization for a specific situation). **"Transfer Attr"** copies a list of properties from the active object and assigns them to all selected ones, saving time compared to manual copying. Since version was 2.1.0 released, the text object "props_temp" opens automatically if the internal text editor is open.
+________________________________________________________________________________________
 
 > [!Warning]
 > Incorrect values in Object Properties are listed in a separate field labeled "broken properties," separated by ";". This enables manual restoration if needed. Similarly, incorrect values are recorded when utilizing "Apply from text".
+_________________________________________________________________________________________
 
 # Export
 Similar to other import-export addons, the DAG exporter can be accessed through `File/Export/`. However, for efficiency during multiple re-exports while working, the exporter is also available in the N-menu (is recommended to use). Both options offer identical functionality, so choose the one that suits you best.
@@ -190,9 +204,11 @@ Common parameters:
 **Path:** Specifies the destination for saving.
 
 **Cleanup Names:** Ignorance of indexes (.000+) during export.
+________________________________________________________________________________________
 
 > [!CAUTION]
 > Use "Cleanup..." only for exporting composites for 3D Max! It's risky. There can be bugs. A dag file for a game engine should not contain multiple objects with the same name.
+________________________________________________________________________________________
 
 The **Name** field is context-sensitive and appears only when exporting to a single .dag file; in other export modes, it's hidden.
 The **Collection** field is also context-sensitive. You are not forced to select a collection from the dropdown by clicking on this field; instead you can simply drag and drop the desired one from the outliner.
@@ -258,9 +274,11 @@ Upon import, objects retain their smoothing groups from the source file. However
 Starting from version 2.1.0, the "Live Update" function has been introduced. When activated, hard points are recalculated automatically when editing smoothing groups. However, this may significantly slow down on heavy geometry, so the option is disabled by default.
 
 In the same version, the feature to select polygons by smoothing group was introduced. Simply click on the button corresponding to the desired group in the **"Select by SG"** sub-panel.
+________________________________________________________________________________________
 
 > [!Note]
 > Selection by smoothing group supplements existing selections rather than replacing them. Therefore, if you only intend to select smoothing group 3, for instance, remember to unselect any other groups first.
+________________________________________________________________________________________
 
 # When to use?
 
@@ -306,9 +324,11 @@ Enabling **"Search in subfolders"** extends the search beyond the specified dire
 **"Masks"** allows setting masks for import similar to searching in .folder.blk. Simplifying input, any set of characters is denoted as "", not ".", and a period is represented simply by a dot, not ".". Masks are separated by ";", and spaces are ignored.
 
 **"Excludes"** follows the same syntax, but for excluding items from imports.
+________________________________________________________________________________________
 
 > [!Tip]
 > For instance, Masks="asset_a.lod0[0,2]; asset_b_dp"; Excludes="_dmg" imports asset_a.lod00.dag, asset_a.lod02.dag, and all logs of all dp asset_b, excluding their _dmg versions.
+________________________________________________________________________________________
 
 **"Path"** indicates the search path.
 
