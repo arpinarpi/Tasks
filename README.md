@@ -169,10 +169,13 @@ Limit by allows you to choose the export mode.
 
 table 
 
-
-
-
-
+| Mode                   | What will it export? | Input data example | Result Example|
+| :---                   |     :---             |        :---:  |:---          |
+| Visible                | export all scene contents to Path\ <Name>.dag | <img width="160" alt="14" src="https://github.com/arpinarpi/Tasks/assets/167418790/aa449616-ee6a-4b5f-9b1e-1abf7c746419">  |C:\tmp\asset.dag, Containing all scene objects with custom normals. |
+| Sel. Joined            | exporting selected objects to Path\<Name>.dag | <img width="162" alt="15" src="https://github.com/arpinarpi/Tasks/assets/167418790/246241e0-ed2c-4bec-bad4-26d35a1e6711"> |C:\tmp\asset.dag, Containing only the selected scene objects. |
+| Sel. Separated         | exporting selected objects to different .dag files. The names of these objects are used as the dag name.            | <img width="294" alt="16" src="https://github.com/arpinarpi/Tasks/assets/167418790/4b5ab762-6d46-434f-846c-2f38649e50b1">|C:\tmp\cube.lod00.dag, C:\tmp\cube.lod01.dag.  |
+| Col. Separated         | Saves collections from the hierarchy starting with the selected one, if there are no nested subcollections inside. The 'export Orphans' checkbox allows you to export objects located next to the collections. It will be clearer with an example ->  | <img width="395" alt="17" src="https://github.com/arpinarpi/Tasks/assets/167418790/30338f9a-8c3d-4bad-adb5-93aad253524d">|In the same path (C:\tmp\) cube.lod00.dag will be saved, with visible geometry and occluder inside cube.lod01.dag, with visible geometry and collider inside cube.lod02.dagcube_temp.dag, it will not be exported as the exportOrphans checkbox is not active. If you do not specify the collection at all, then in this case the result will be identical, because the check will start with the SceneCollection, and it contains only the same cube collection    |
+| Col. Joined            | Saves the entire contents of the selected collection to a file, named like this collection. Created primarily for viewing asset files created from several files in AV. For example, houses with _dp             |    <img width="396" alt="18" src="https://github.com/arpinarpi/Tasks/assets/167418790/2dd04ade-eafb-4e64-90c3-242fb78d1618">   |C:\tmp\soviet_town_building_5_floors_a_joined.lod00.dag, containing all zero lods related to this building. The collections were linked (transferred in the outliner with Ctrl), i.e. these are not copies, but the same collections. You can prepare the rest of the temporary lodes in the same way. Much faster than selecting objects and entering a name manually. **Please pay attention:** since these are the same collections, and not copies, do not delete them on DEL, but put them away on RMB/Unlink, so as not to overwrite the excess    |
 
 
 # Collection Properties
