@@ -3,13 +3,30 @@
 - [Installation ](#Installation)
 - [Log and text editors](#Logandtexteditors)
 - [Setting up materials](#Settingupmaterials)
+    - [Main](#Main)
+    - [Textures](#Textures)
+    - [Optional](#Optional)
+    - [Tools](#Tools)
+    - [Proxy](#Proxy)
 - [Object Properties](#ObjectProperties)
 - [Export](#Export)
+    - [Batch Export](#BatchExport)
 - [Collection Properties](#CollectionProperties)
+   - [Override name](#Overridename)
+   - [Geometry Nodes](#GeometryNodes)
 - [Smoothing groups](#Smoothinggroups)
+   - [When to use?](#Whentouse?)
 - [Import](#Import)
+   - [Import and textures](#Importandtextures)
+   - [File/Import](#File/Import)
+   - [Batch Import](#BatchImport)
+       - [Additional features](#Additionalfeatures)
 - [Tools](#Tools)
 - [Experimental Features](#ExperimentalFeatures)
+   - [Bake](#Bake)
+     - [Bake](#Bake)
+   - [Composite editor](#Compositeeditor)
+   - [General limitations of blender tools](#Generallimitationsofblendertools)
 
 
 
@@ -214,7 +231,7 @@ But there's more. If desired, you can completely redefine the path by starting i
 
 Here the **"Path"** field will be ignored for this collection, and the file will instead be exported to **"D:\EnlistedCDK\develop\assets\rendinst_1lod"**.
 
-## Type
+### Type
 
 <img width="182" alt="23" src="https://github.com/arpinarpi/Tasks/assets/167418790/cf5e08f5-2afc-4fa0-b0a9-74b418b0839d">
 
@@ -298,7 +315,7 @@ Enabling **"Search in subfolders"** extends the search beyond the specified dire
 
 During import, Blender may become unresponsive. To monitor the process, I suggest opening the console **(Window/Toggle system console)**.
 
-# Additional features
+### Additional features
 There are many cases when you may need to import a single asset currently open in the Asset Viewer or Windows Explorer. Instead of searching for it in File\Import, you can copy the path from AV or Windows Explorer (RMB/copy as path) and paste it into the Path panel of batch import. This automatically transfers the file name to Masks. Clicking on Import will then pull in only the desired asset.
 
 If you only have the asset's name, you can specify it in Masks, then apply the entire project directory as a search path with subfolders using the **"Apply as search path"** button. When the path is unknown, the import may take a couple of seconds longer (search time), but it's often quicker than manually finding the full path.
@@ -356,7 +373,7 @@ This setup may still require adjustments such as moving and scaling the bboxes t
 
 This panel makes it possible to re-bake textures from heavy shaders to rendinst_simple. Typically used for final builds or porting assets to mobile projects.
 
-The topic is extensive, so it is discussed in a separate article.
+### The topic is extensive, so it is discussed in a separate article.
 
 ## Composite editor.
 
