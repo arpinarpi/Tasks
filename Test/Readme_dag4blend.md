@@ -40,7 +40,7 @@ Go to **Edit/Preferences/Add-ons**, then click **Install** and fill in the addon
 
 After installation, tick the checkbox next to the addon in the list. Before starting work, do some initial setup without closing Preferences:
 
-![1](JPG\1.jpg )
+![1](https://github.com/arpinarpi/Tasks/blob/main/Test/JPG/1.jpg)
 
 
 Manually set the paths for ObjectProperties presets and shader lists to prevent user changes from being unsaved when installing a new addon version. It's recommended to store presets outside the addon folder.
